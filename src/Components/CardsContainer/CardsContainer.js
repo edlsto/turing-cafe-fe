@@ -1,6 +1,7 @@
 import React from "react";
 import "./CardsContainer.css";
 import Card from "../Card/Card";
+import PropTypes from "prop-types";
 
 const CardsContainer = ({ reservations, deleteReservation }) => {
   const cards = reservations.map(reservation => {
@@ -20,3 +21,8 @@ const CardsContainer = ({ reservations, deleteReservation }) => {
 };
 
 export default CardsContainer;
+
+CardsContainer.propTypes = {
+  reservation: PropTypes.array,
+  deleteReservation: PropTypes.func
+};

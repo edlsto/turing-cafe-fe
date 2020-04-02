@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.css";
+import PropTypes from "prop-types";
 
 const Card = ({ name, date, number, time, id, deleteReservation }) => {
   return (
@@ -16,3 +17,12 @@ const Card = ({ name, date, number, time, id, deleteReservation }) => {
 };
 
 export default Card;
+
+Card.propTypes = {
+  name: PropTypes.string,
+  date: PropTypes.string,
+  number: PropTypes.number,
+  time: PropTypes.string,
+  id: PropTypes.number,
+  deleteReservation: PropTypes.func
+};
