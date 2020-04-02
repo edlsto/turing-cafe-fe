@@ -1,0 +1,24 @@
+.card {
+  background: white;
+  margin: 1em;
+  padding: 1em;
+  border: 3px solid teal;
+  border-radius: 1em;
+  color: teal;
+}
+
+.cancel-btn {
+  width: 100%;
+  background: teal;
+  color: white;
+  margin-top: 1em;
+  height: 2em;
+}
+
+.reservation-name {
+  font-weight: bold;
+}
+
+.reservation-category {
+  line-height: 1.5;
+}
