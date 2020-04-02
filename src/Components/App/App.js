@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./App.css";
 import CardsContainer from "../CardsContainer/CardsContainer";
 import Form from "../Form/Form";
+import {
+  getData,
+  postNewReservation,
+  deleteFromDatabase
+} from "../../api-calls.js";
 
 class App extends Component {
   constructor(props) {
@@ -11,38 +16,19 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    fetch("http://localhost:3001/api/v1/reservations")
-      .then(response => response.json())
-      .then(data => this.setState({ reservations: data }));
+    getData().then(data => this.setState({ reservations: data }));
   }
 
   addReservation = reservation => {
-    fetch("http://localhost:3001/api/v1/reservations", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: reservation.name,
-        date: reservation.date,
-        time: reservation.time,
-        number: reservation.number
+    postNewReservation(reservation).then(data =>
+      this.setState({
+        reservations: [...this.state.reservations, data]
       })
-    })
-      .then(response => response.json())
-      .then(data =>
-        this.setState({
-          reservations: [...this.state.reservations, data]
-        })
-      );
+    );
   };
 
   deleteReservation = id => {
-    fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
-      method: "DELETE"
-    })
-      .then(response => response.json())
-      .then(data => this.setState({ reservations: data }));
+    deleteFromDatabase(id).then(data => this.setState({ reservations: data }));
   };
 
   render() {
