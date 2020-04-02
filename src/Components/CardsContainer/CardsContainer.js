@@ -2,7 +2,7 @@ import React from "react";
 import "./CardsContainer.css";
 import Card from "../Card/Card";
 
-const CardsContainer = ({ reservations }) => {
+const CardsContainer = ({ reservations, deleteReservation }) => {
   const cards = reservations.map(reservation => {
     return (
       <Card
@@ -12,6 +12,7 @@ const CardsContainer = ({ reservations }) => {
         number={reservation.number}
         id={reservation.id}
         key={reservation.id}
+        deleteReservation={deleteReservation}
       />
     );
   });
