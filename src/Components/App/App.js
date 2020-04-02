@@ -16,19 +16,25 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    getData().then(data => this.setState({ reservations: data }));
+    getData()
+      .then(data => this.setState({ reservations: data }))
+      .catch(error => console.log(error.message));
   }
 
   addReservation = reservation => {
-    postNewReservation(reservation).then(data =>
-      this.setState({
-        reservations: [...this.state.reservations, data]
-      })
-    );
+    postNewReservation(reservation)
+      .then(data =>
+        this.setState({
+          reservations: [...this.state.reservations, data]
+        })
+      )
+      .catch(error => console.log(error.message));
   };
 
   deleteReservation = id => {
-    deleteFromDatabase(id).then(data => this.setState({ reservations: data }));
+    deleteFromDatabase(id)
+      .then(data => this.setState({ reservations: data }))
+      .catch(error => error.message);
   };
 
   render() {
