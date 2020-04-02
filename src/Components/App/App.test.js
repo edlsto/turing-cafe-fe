@@ -11,7 +11,7 @@ it("displays a new reservation when a user submits a reservation", async () => {
     name: "new test user",
     date: "4/11",
     time: "8:30",
-    number: "100"
+    number: 100
   });
   getData.mockResolvedValueOnce([
     {
@@ -45,7 +45,7 @@ it("displays a new reservation when a user submits a reservation", async () => {
   fireEvent.change(nameInput, { target: { value: "new test user" } });
   fireEvent.change(dateInput, { target: { value: "4/11" } });
   fireEvent.change(timeInput, { target: { value: "8:30" } });
-  fireEvent.change(numberInput, { target: { value: "100" } });
+  fireEvent.change(numberInput, { target: { value: 100 } });
   fireEvent.click(submitBtn);
   const nameText = await waitFor(() => getByText("new test user"));
   const dateText = await waitFor(() => getByText("4/11"));
