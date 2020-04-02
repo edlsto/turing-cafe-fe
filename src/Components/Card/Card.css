@@ -1,8 +1,8 @@
 .card {
   background: white;
-  margin: 1em;
-  padding: 1em;
-  border: 3px solid teal;
+  margin: 1em 0.5em;
+  padding: 1em 1.5em;
+  border: 4px solid teal;
   border-radius: 1em;
   color: teal;
 }
@@ -13,6 +13,7 @@
   color: white;
   margin-top: 1em;
   height: 2em;
+  font-size: 1em;
 }
 
 .reservation-name {
@@ -20,5 +21,5 @@
 }
 
 .reservation-category {
-  line-height: 1.5;
+  line-height: 2;
 }
