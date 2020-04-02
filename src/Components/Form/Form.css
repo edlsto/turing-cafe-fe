@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.form-item {
+  width: 15em;
+  font-size: 1em;
+  margin-right: 1em;
+  height: 1.5em;
+}
+
+.make-reservation-btn {
+  padding: 0.35em;
+  height: 100%;
+  border: none;
+  background: teal;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+}
